@@ -3,11 +3,49 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="stylesheet" href="/src/style.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite App</title>
   </head>
   <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
+    <div class="main-container">
+      <header>This is the Wheather app</header>
+      <div class="card-container">
+        <div class="card">
+          <div class="card-search">
+            <input class="search-input" type="text" placeholder="Search for a city" />
+            <button type="submit" class="search-button">Search</button>
+          </div>
+          <div class="info-card">
+            <div class="info-card-top">
+              <div class="img-container">
+                <img src="" alt="">
+              </div>
+              <p class="temperature"> 7 C</p>
+              <p class="city">New York</p>
+            </div>
+
+            <div class="info-card-bottom">
+              <div class="info-card-bottom-left">
+                <img src="src/assets/humedad (1).png" alt="">
+                <div class="info-humidity">
+                  <p class="humidity">48%</p>
+                  <p>Humidity</p>
+                </div>
+              </div>
+              <div class="info-card-bottom-right">
+                <img src="src/assets/veleta-de-viento.png" alt="">
+                <div class="info-wind">
+                  <p class="wind_value">5</p>
+                  <p>Wind</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <script src="/src/main.js"></script>
   </body>
 </html>

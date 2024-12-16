@@ -1,24 +1,35 @@
-import './style.css'
-import javascriptLogo from './javascript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.js'
+const API_KEY = '3592e37b327ca306e2c6309cd2e2283b'
+const API_URL = 'https://api.openweathermap.org/data/2.5/weather?units=metric&q='
 
-document.querySelector('#app').innerHTML = `
-  <div>
-    <a href="https://vite.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
-      <img src="${javascriptLogo}" class="logo vanilla" alt="JavaScript logo" />
-    </a>
-    <h1>Hello Vite!</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite logo to learn more
-    </p>
-  </div>
-`
 
-setupCounter(document.querySelector('#counter'))
+const temperature = document.getElementsByClassName('temperature')[0];
+const humidity = document.getElementsByClassName('humidity')[0];
+const city = document.getElementsByClassName('city')[0];
+const searchButton = document.getElementsByClassName('search-button')[0];
+const searchInput = document.getElementsByClassName('search-input')[0];
+const wind = document.getElementsByClassName('wind_value')[0];
+console.log(wind.innerHTML)
+
+searchButton.addEventListener('click', () => {
+
+  getWeather(searchInput.value)
+})
+
+searchInput.addEventListener('keypress', (event) => {
+  if (event.key === 'Enter') {
+    getWeather(searchInput.value);
+  }
+});
+
+async function getWeather(cityName) {
+  const response  = await fetch(`${API_URL}${cityName}&appid=${API_KEY}`)
+  const data = await response.json()
+  console.log(data)
+  console.log(data.wind.speed)
+  city.innerHTML = data.name
+  temperature.innerHTML = Math.round(data.main.temp) + ' °C'
+  humidity.innerHTML = Math.round(data.main.humidity) + '%'
+  wind.innerHTML = Math.round(data.wind.speed ) + 'Km/h'
+  searchInput.innerHTML = ''
+  searchInput.value = ''
+}
