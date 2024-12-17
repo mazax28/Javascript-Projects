@@ -1,0 +1,135 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: 'Poppins', sans-serif;
+  background:linear-gradient(120deg, #d4d4d6, #9b8ca1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.container{
+  width:min(90%, 600px);
+  padding: 2em 1em 2em 1em;
+  background-color: whitesmoke;
+  border-radius: 0.8em;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  .title{
+    color: #928697;
+    font-size: 2em;
+    font-weight: 600;
+  }
+  .container-search{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    input{
+      outline: none;
+      border: none;
+      padding: 1em;
+      margin-right: -4em;
+      flex: 1;
+      border-radius:2em;
+      background-color: rgb(234, 233, 232);
+      color: rgb(119, 118, 116);
+    }
+    button{
+      outline: none;
+      font-weight: 600;
+      border: none;
+      padding: 1.5em 3em;
+      border-radius: 2em;
+      background-color: rgb(164, 98, 222);
+      color: white;
+      &:hover{
+        transition: 0.3s ease-in-out;
+        background-color: rgb(136, 79, 186);
+        cursor: pointer;
+      }
+    }
+  }
+  .container-task{
+    margin-top: 2em;
+    width: 100%;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    .task{
+      padding: 1em;
+      user-select: none;
+      cursor: pointer;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      .task-left{
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+        gap: 1em;
+        align-items: center;
+        .task-title{
+          font-size: 1.2em;
+          font-weight: 600;
+          color: rgb(119, 118, 116);
+        }
+        .task-title.checked{
+          text-decoration: line-through;
+          color: rgb(181, 180, 178);
+        }
+        .btn-check{
+          outline: none;
+          background: none;
+          border-radius: 50%;
+          cursor: pointer;
+          width: 30px;
+          height: 30px;
+          border: 2px solid rgb(181, 180, 178);
+          .palomita{
+            display: none;
+          }
+        }
+        .btn-check.checked{
+          background-color: rgb(164, 98, 222);
+          border: none;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 50%;
+          width: 30px;
+          height: 30px;
+          color: white;
+          .palomita{
+            display: block;
+          }
+        }
+      }
+      .btn-delete{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        outline: none;
+        background: none;
+        border-radius: 50%;
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+        border: 2px solid rgb(181, 180, 178);
+        &:hover{
+          transition: 0.3s ease-in-out;
+          background-color: rgb(208, 206, 209);
+        }
+      }
+      
+    }
+
+  }
+}
