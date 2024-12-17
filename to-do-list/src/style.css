@@ -62,6 +62,13 @@ body{
     display: flex;
     flex-direction: column;
     gap: 1em;
+    max-height: 300px;
+    &::-webkit-scrollbar{
+      width: 5px;
+      background-color: #928697;
+      border: 1px solid #928697;
+      border-radius: 10px;
+    }
     .task{
       padding: 1em;
       user-select: none;
