@@ -20,7 +20,11 @@ function addTask() {
 
     let btn_check = document.createElement('button');
     btn_check.classList.add('btn-check');
-    btn_check.innerHTML = '✔'; // Palomita
+    let check = document.createElement('p');
+    check.innerHTML = '✓';
+    check.classList.add('palomita');
+    btn_check.appendChild(check);
+     // Palomita
 
     let task_title = document.createElement('p');
     task_title.classList.add('task-title');
