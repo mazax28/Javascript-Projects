@@ -1,0 +1,171 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    background:linear-gradient(135deg, #f5f2f2, #c181da);
+    min-height: 100vh;
+    display: flex;
+    gap: 1em;
+    flex-direction: row;
+    padding: 2em 3em;
+}
+.container_one{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+    .container_title{
+
+    }
+    .container_title{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 0.5em;
+        color: #c181da;
+        font-size: 3em;
+        font-weight: 600;
+        i{
+            color: #a75ecb;
+        }
+    }
+    .create_note{
+        display: flex;
+        width: min(250px,60%);
+        flex-direction: row;
+        align-items: center;
+        gap: 1em;
+        padding: 1em 2em;
+        border-radius: 1em;
+        background-color: #c181da;
+        cursor: pointer;
+        outline: none;
+        border: none;
+        color: #f5f2f2;
+        font-size: 1.2em;
+        font-weight: 600;
+        &:hover{
+            transition: 0.3s ease-in-out;
+            background-color: #a75ecb;
+        }
+
+
+    }
+    .container_notes{
+        width: 100%;
+        /* background-color: aqua; */
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+        margin-top: 1em;
+        overflow-y: auto;
+        height: 500px;
+        &::-webkit-scrollbar{
+            width: 5px;
+            background-color: #a75ecb;
+            border-radius: 3px;
+        }
+        .note{
+            cursor: pointer;
+            position: relative;
+            width: 100%;
+            min-height: 200px;
+            max-height: 200px;
+            border-radius: 0.5em;
+            overflow: hidden;
+            outline: none;
+            border: none;
+            background-color: #f5f2f2;
+            color: #aca8ad;
+            font-size: 1em;
+            padding: 1em;
+            .note_content{
+                display: block;
+                width: 100%;
+                max-height: 90%;
+                white-space: pre-wrap;
+                outline: none;
+                border: none;
+                padding: 1em 2em;
+                overflow: hidden;
+            }
+            i{
+                position: absolute;
+                bottom: 0.5em;
+                right: 0.5em;
+                color: #c181da;
+                cursor: pointer;
+                &:hover{
+                    color: #a75ecb;
+                }
+            }
+        }
+    }
+}
+.note_main{
+    display: none;
+    position: relative;
+    width: 60%;
+    min-height: 90vh; /* Garantiza altura mínima de toda la pantalla */
+    max-height: 90vh; /* Limita la altura máxima */
+    /* background-color: #242325; */
+    padding: 2em 1em 2em 1em;	
+    border-radius: 1em;
+    background-color: #f5f2f2;
+    font-size: 1em;
+    color:#aca8ad;
+
+    #save{
+        position: absolute;
+        top: 0.5em;
+        right: 3em;
+        color: #c181da;
+        cursor: pointer;
+        font-size: 1.5em;
+    }
+    #close{
+        position: absolute;
+        top: 0.5em;
+        right: 1em;
+        color: #c181da;
+        cursor: pointer;
+        font-size: 1.5em;
+    }
+    
+
+    #delete{
+        position: absolute;
+        top: 0.5em;
+        right: 4.5em;
+        color: #c181da;
+        cursor: pointer;
+        font-size: 1.5em;
+    }
+    .note_content_main{
+        display: block;
+        overflow-y: auto;
+        width: 100%;
+        min-height: 85vh;
+        max-height: 85vh;
+        white-space: pre-wrap;
+        /* background-color: #e7e5e8; */
+        outline: none;
+        border: none;
+        padding: 1em;
+        &::-webkit-scrollbar{
+            width: 5px;
+            background-color: #a75ecb;
+            border-radius: 3px;
+            max-height: 30px;
+        }
+    }
+
+}
+
+.note_main.active{
+    display: block;
+}

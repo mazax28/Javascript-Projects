@@ -3,10 +3,37 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="stylesheet" href="/src/style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <title>Note app</title>
   </head>
   <body>
+    <div class="container_one">
+      <div class="container_title">
+        <p class="title">Notes</p>
+        <i class="ri-git-repository-line"></i>
+      </div>
+      <button class="create_note">
+        <i class="ri-pencil-fill"></i>
+        <span>Create Note</span>
+      </button>
+      <div class="container_notes">
+        <!-- <p class="note">
+          <span class="note_content"></span>
+          <i class="ri-delete-bin-fill"></i>
+        </p> -->
+      </div>
+    </div>
+    <p class="note_main">
+      <i id="save" class="ri-save-3-line"></i>
+      <i id="delete" class="ri-delete-bin-fill"></i>
+      <i id="close" class="ri-close-circle-fill"></i>
+      <span contenteditable="true" class="note_content_main"></span>
+    </p>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
